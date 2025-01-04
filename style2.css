@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'montserrat';
+    color: aliceblue;
+     
+  }
+  html,body{
+    height:100%;
+    width: 100%;
+  }
+   
+  #nav
+  {
+    height:130px;
+    width:100%;
+    color: black;
+    display: flex;
+    padding: 0 150px;/* top and bottom =0 and left and right=150px*/
+    align-items: center; 
+    gap:50px;
+    /* iska use x axis kaliya kiya jata ha*/
+    position: fixed;/* hame pure website move karata vaqt hamra nav bar chalta hua dikha*/
+    z-index:99;
+   
+  }
+  #logo{
+    size-adjust: cover;
+  }
+  #navlist
+  {
+    display: flex;
+    text-align: end;
+    gap:50px
+  }
+  #nav a{
+    text-decoration: none;
+     
+    
+  }
+  #nav h4{
+    text-transform:uppercase; /* iska use captital or small letter kaliya kiya jata ha*/
+    color:white;
+    
+    
+     
+  }
+ 
+#nav a:hover h4 {
+    color: #007BFF; /* Change color on hover */
+}
+#cursor
+{
+    height: 20px; 
+    width:20px;
+    background-color: yellowgreen;
+    border-radius:50%;/* cursor hamra square shape ma tha isliya border redius lagya */
+    position:fixed;/*cursor  ko scroll ka sath movemement karna is liya fixed kiya*/
+    z-index:1;
+}
+#cursor-blur
+{
+    height:200px; 
+    width:200px;
+    background-color: rgba(185, 219, 111, 0.925);
+    border-radius:50%;/* cursor hamra square shape ma tha isliya border redius lagya */
+    position:fixed;/*cursor  ko scroll ka sath movemement karna is liya fixed kiya*/
+    filter:blur(40px);/* blur cursor ko blur karna kaliya use kiya ha*/
+    z-index:9;
+}
+  video
+  {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:fixed;
+    z-index: -1;
+  }
+  #nav a h4 {
+    margin: 0;
+}
+#main
+{
+  position: relative;
+  background-color: rgba(0,0,0,0.39);
+}
+#page1
+{
+    height:100vh;/*vh=screen ki jitni size utni % ka use esliya nahi kiya kyuki parent ki pass koi height nahi ha */
+ width: 100%;
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ text-align: center;
+ z-index: 10;
+
+
+}
+#page1 span{
+    color: red;
+    position: relative;
+}
+#page1 h1
+{
+font-size:80px;
+color: aliceblue;
+position: relative;
+}
+#page1 h2
+{
+font-size:20px;
+color: aliceblue;
+margin-top: 10px;
+margin-bottom:10px;
+
+}
+#page1 p
+{
+font-size:15px;
+color: aliceblue;
+width:40%;/* new line ma line kaliya use kiya*/
+}
+/*  new concept 
+sudoo element: css ki help sa style kar skta ha but css ki help sa koi word nahi likh skta ha*/
+
+#page1 h1::before
+{
+    content:"DRIVING SCHOOL ";/* jaruri ha*/
+    position: absolute;/*word ko uthena kaliya double word print hua content ka through page1 ka h1 ma relative karna hoga*/
+     top:-4px;
+     left:-4px;
+     -webkit-text-stroke:7px black ;
+     z-index:-1;
+}
+#page2
+{
+    height:100vh;/* height ko main ma kuch nahi diya isliy vh use kar raha width ma koi case nahi usma use kar skta ha ha*/
+    width:100%;
+    z-index: 10;
+}
+#scroller
+{
+    
+    white-space:nowrap;
+     overflow-y: hidden;
+     overflow-x: auto;/* word page 2 ka outside ho raha tha mena overflow*/
+     position: relative;
+     z-index:10;/* position and z index aisa isliya rakh kyuki jab ham word pa jynga thora image show ho*/
+}
+/* scroller bar remove kar na kaliya*/
+#scroller::-webkit-scrollbar
+{
+    display: none;
+}
+#scroller h4:hover
+{
+    color:#95c11e;
+}
+#scroller h4
+{
+display: inline-block;
+white-space: nowrap;
+font-size: 100px;
+font-weight:bolder;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+margin-right:10px;
+-webkit-text-stroke:0.5px #b1c772;/* border in alphabet bolder*/
+color:transparent;
+transition: 0.4s;
+}
+#scroller-in
+{
+    display: inline-block;
+    white-space:nowrap;
+    animation-name:scroll ;/* animation name keyframe sa aya ha*/
+    animation-duration:30s;/* timing*/
+    animation-iteration-count: infinite;/* scroll word infinite linear chalna chahta ha*/
+    animation-timing-function:linear;
+}
+/* ISKA USE SCROLLER ALPHABATE INVISIBLE SCROOL KARAGA */@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+ #about-us
+ {
+    height:40vh;
+    width:100%;
+    
+    display: flex;
+    padding: 10px 50px;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index:10 ;
+ }
+ #about-us-1
+ {
+    width: 40%;
+    text-align: center;
+ }
+ #about-us-1 h2{
+   
+    font-size:70px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    
+ }
+ #about-us-1 p{
+    font-size:20px;
+    line-height:26px;/* jab ooper para and nich para ma gap lena ho tab use karta ha line height ka*/
+ }
+#about-us img{
+    height:220px;
+    width:220px;
+    padding:10px;
+    border-radius:20px;
+    object-fit:cover;
+    filter: drop-shadow(5px 5px  5px lightgrey);
+
+}
+#img {
+    display: grid;
+     display: flex;
+     align-items: center;
+    gap: 10px; /* Adjust the gap as needed */
+    background-color: #333;
+    padding: 20px 50px;
+    justify-content: space-evenly;
+    position: relative;
+    border-radius: 25%;
+    z-index:9;
+   background-position: fixed;
+    
+    
+    
+}
+#img img {
+    width:200px;
+    height:200px;
+    filter: drop-shadow(5px 5px  5px skyblue);
+    border-radius: 20%;
+
+
+}
+.elfsight-app-d33f94d3-699f-4868-b571-dc3e24bfb9d0 {
+    max-width: 800px; /* Adjust the max width as needed */
+    margin: 0 auto;   /* Center the widget */
+    position: relative;
+    z-index:0;
+}
+.elfsight-app-d33f94d3-699f-4868-b571-dc3e24bfb9d0 .elfsight-google-reviews {
+    border: 1px solid #ddd; /* Add a border to the widget */
+    padding: 20px;          /* Add padding inside the widget */
+    border-radius: 10px;    /* Round the corners of the widget */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+     
+}
+
+/* Customizing review items */
+.elfsight-app-d33f94d3-699f-4868-b571-dc3e24bfb9d0 .elfsight-google-review-item {
+    margin-bottom: 20px; /* Space between reviews */
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+     
+}
+
+.elfsight-app-d33f94d3-699f-4868-b571-dc3e24bfb9d0 .elfsight-google-review-item:last-child {
+    border-bottom: none; /* Remove border from the last item */
+    color:#333;
+    position: static;
+    
+}
+
+/* Customizing review text */
+.elfsight-app-d33f94d3-699f-4868-b571-dc3e24bfb9d0 .elfsight-google-review-text {
+    font-size: 16px;
+    color: #333;
+  
+}
+
+/* Customizing reviewer name */
+.elfsight-app-d33f94d3-699f-4868-b571-dc3e24bfb9d0 .elfsight-google-review-author {
+    font-weight: bold;
+    color: #000;
+     
+}
+#review
+{
+    filter: drop-shadow( 10px 10px 10px red);
+}
+.Reviews h2{
+    text-align: center;
+    font-size:70px;
+    font-weight:bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    z-index:10;
+}
+ #channel
+ {
+    height:30%;
+ }
+footer{
+    background-color: #111;
+}
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px ;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding:  10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+/* Hover affect on social media icon */
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+
+}
+.footerNav{
+    margin: 30px 0;
+    z-index:10px;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    z-index:10;
+}
+.footerNav ul li a{
+    color:white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+
+}
+.footerNav ul li a:hover {
+   
+    color:red;
+}
+.footerBottom{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+    color: white;
+}
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+#h3
+{
+    text-align: center;
+    padding-top:10px;
+    font-weight: bolder;
+}
+#location
+{
+    width:100%;
+    align-items:center;
+    padding:0 0 0 80%;
+    
+}
+#Area
+{
+    margin-bottom:20px;
+    font-weight: bold;
+    background-color: #333;
+    z-index:10;
+    
+}
+@media (max-width:700px){
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
+    #h3
+    {
+        text-align: center;
+    }
+}
+@media(max-width:400px)
+{
+
+}
+/* contact form*/
+#contact-us
+{
+    height:100vh;
+}
+#info a i{
+    color:black;
+    height: 5%;
+    
+     
+}
+#info a i h4 {
+    color: #333;
+
+}
+#info a
+{
+   display: block;
+    padding-top:100px;
+    color: black;
+   
+}
+#info
+{
+     width:50%;
+     height:40px;
+    margin-left:10%;
+    padding-top:100px;
+    
+      
+}
+#contact
+{
+    background-color:#333;
+     height:100vh; 
+     background-image:url(image5.jpg);
+     background-size: cover;
+     background-repeat: no-repeat;
+}
+#heading
+{
+    text-align: center;
+    padding-top:20px;
+    font-size:50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 900;
+     
+}
+
+#contact-form h3{
+    font-size:25px;
+    font-weight:Bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#contact-form button:hover {
+    background-color: blueviolet;
+}
+#contact-form{
+    justify-content: center;
+    background-color: #333;
+    width:30%;
+    height:60%;
+    padding:50px;
+    margin:0 0 30% 50%;
+    border-radius: 20%;
+    border: #007BFF;
+    box-shadow:20px 10px 10px orange;
+    
+}
+#button button
+{
+    color:black;
+    margin:8px 0;
+     align-items: center;
+     padding: 8px;
+     margin-left:90px
+}
+#contact-form input 
+{
+    color: #333;
+    border-radius:5%;
+    padding:5px;
+    border:none;
+    width:70%;
+    padding:10px 0;
+    outline: none;
+    border-bottom: 2px solid #333;
+
+}
+#Book-Slot option
+{
+ color: #333;
+}
+#Book-Slot
+{
+    color: black;
+}
+#contact-form input
+{
+display: block;
+margin:10px 0;
+
+}
